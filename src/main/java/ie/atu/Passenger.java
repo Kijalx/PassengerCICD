@@ -40,4 +40,15 @@ public class Passenger {
     public String getPassengerName(){
         return userName;
     }
+    public void setUserID(String idofuser){
+        if(idofuser.length() >= 10){
+            userID = idofuser;
+        }
+        else {
+            throw new IllegalArgumentException("ID must be at least 10 characters");
+        }
+    }
+    public String getPassengerUserID(){
+        return userID;
+    }
 }
