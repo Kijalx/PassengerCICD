@@ -43,6 +43,11 @@ class PassengerTest {
         Exception exMessage = assertThrows(IllegalArgumentException.class, ()->{new Passenger("Mr","Aleks","1234","0834552813",21);});
         assertEquals("ID must be at least 10 characters", exMessage.getMessage());
     }
+    @Test
+    void phoneNumberFail() {
+        Exception exMessage = assertThrows(IllegalArgumentException.class, ()->{new Passenger("Mr","Aleks","123JHGE25D2","083455",21);});
+        assertEquals("Phone Number must be at least 7 characters", exMessage.getMessage());
+    }
     @org.junit.jupiter.api.AfterEach
     void tearDown() {
     }

@@ -51,4 +51,16 @@ public class Passenger {
     public String getPassengerUserID(){
         return userID;
     }
+    public void setPhoneNumber(String phnum)
+    {
+        if(phnum.length() >= 7){
+            userPhoneNum = phnum;
+        }
+        else{
+            throw new IllegalArgumentException("Phone Number must be at least 7 characters");
+        }
+    }
+    public String getPassengerPhoneNumber(){
+        return userPhoneNum;
+    }
 }
