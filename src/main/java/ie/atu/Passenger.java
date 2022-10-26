@@ -14,6 +14,7 @@ public class Passenger {
         setPhoneNumber(phoneNum);
         setAge(age);
     }
+
     public void setTitle(String title){
         if(title.equalsIgnoreCase("Mr") || title.equalsIgnoreCase("Mrs") || title.equalsIgnoreCase("Ms"))
         {
@@ -26,5 +27,17 @@ public class Passenger {
     }
     public String getPassengerTitle(){
         return userTitle;
+    }
+
+    public void setName(String nameofuser){
+        if(nameofuser.length() >= 3){
+            userName = nameofuser;
+        }
+        else{
+            throw new IllegalArgumentException("This is not a valid name must be 3 or more characters");
+        }
+    }
+    public String getPassengerName(){
+        return userName;
     }
 }

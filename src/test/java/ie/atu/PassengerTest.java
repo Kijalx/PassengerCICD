@@ -33,6 +33,11 @@ class PassengerTest {
         Exception exMessage = assertThrows(IllegalArgumentException.class, ()->{new Passenger("sdgs","Aleks","123JHGE25D2","0834552813",21);});
         assertEquals("This is not a valid title", exMessage.getMessage());
     }
+    @Test
+    void testNameFail(){
+        Exception exMessage = assertThrows(IllegalArgumentException.class, ()->{new Passenger("Mr","fa","123JHGE25D2","0834552813",21);});
+        assertEquals("This is not a valid name must be 3 or more characters", exMessage.getMessage());
+    }
     @org.junit.jupiter.api.AfterEach
     void tearDown() {
     }
