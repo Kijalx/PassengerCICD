@@ -48,6 +48,11 @@ class PassengerTest {
         Exception exMessage = assertThrows(IllegalArgumentException.class, ()->{new Passenger("Mr","Aleks","123JHGE25D2","083455",21);});
         assertEquals("Phone Number must be at least 7 characters", exMessage.getMessage());
     }
+    @Test
+    void ageFail(){
+        Exception exMessage = assertThrows(IllegalArgumentException.class, ()->{new Passenger("Mr","Aleks","123JHGE25D2","0834552813",12);});
+        assertEquals("Passenger must be over 16 to fly.", exMessage.getMessage());
+    }
     @org.junit.jupiter.api.AfterEach
     void tearDown() {
     }
