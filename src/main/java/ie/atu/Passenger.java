@@ -40,6 +40,7 @@ public class Passenger {
     public String getPassengerName(){
         return userName;
     }
+
     public void setUserID(String idofuser){
         if(idofuser.length() >= 10){
             userID = idofuser;
@@ -51,6 +52,7 @@ public class Passenger {
     public String getPassengerUserID(){
         return userID;
     }
+
     public void setPhoneNumber(String phnum)
     {
         if(phnum.length() >= 7){
@@ -63,6 +65,7 @@ public class Passenger {
     public String getPassengerPhoneNumber(){
         return userPhoneNum;
     }
+
     public void setAge(int ageofuser){
         if(ageofuser > 16){
             userAge = ageofuser;
