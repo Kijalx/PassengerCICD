@@ -63,4 +63,15 @@ public class Passenger {
     public String getPassengerPhoneNumber(){
         return userPhoneNum;
     }
+    public void setAge(int ageofuser){
+        if(ageofuser > 16){
+            userAge = ageofuser;
+        }
+        else{
+            throw new IllegalArgumentException("Passenger must be over 16 to fly.");
+        }
+    }
+    public int getPassengerAge(){
+        return userAge;
+    }
 }
