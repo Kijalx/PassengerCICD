@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Passenger.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">week5</a> &gt; <a href="index.source.html" class="el_package">ie.atu</a> &gt; <span class="el_source">Passenger.java</span></div><h1>Passenger.java</h1><pre class="source lang-java linenums">/*
+ * Aleksander Kijewski
+ * G00396018
+ * Java Personal Assignment // Test Driven File
+ */
+package ie.atu;
+
+public class Passenger {
+    /* Creates local variables*/
+    private String userTitle;
+    private String userName;
+    private String userID;
+    private String userPhoneNum;
+    private int userAge;
+
+    /* Constructor */
+<span class="fc" id="L17">    public Passenger(String title, String name, String id, String phoneNum, int age){</span>
+<span class="fc" id="L18">        setTitle(title);</span>
+<span class="fc" id="L19">        setName(name);</span>
+<span class="fc" id="L20">        setUserID(id);</span>
+<span class="fc" id="L21">        setPhoneNumber(phoneNum);</span>
+<span class="fc" id="L22">        setAge(age);</span>
+<span class="fc" id="L23">    }</span>
+
+    /* Setter for UserTitle */
+    private void setTitle(String title){
+<span class="fc bfc" id="L27" title="All 6 branches covered.">        if(title.equalsIgnoreCase(&quot;Mr&quot;) || title.equalsIgnoreCase(&quot;Mrs&quot;) || title.equalsIgnoreCase(&quot;Ms&quot;)){ // Checks if imputted title is correct</span>
+<span class="fc" id="L28">            userTitle = title; // Sets UserTitle</span>
+        }
+        else { // If title is incorrect
+<span class="fc" id="L31">            throw new IllegalArgumentException(&quot;This is not a valid title&quot;); // Outputs an error</span>
+        }
+<span class="fc" id="L33">    }</span>
+    /* Getter for UserTitle */
+    public String getPassengerTitle() {
+<span class="fc" id="L36">        return userTitle;</span>
+    }
+
+    /* Setter for UserName */
+    private void setName(String nameofuser) {
+<span class="fc bfc" id="L41" title="All 2 branches covered.">        if(nameofuser.length() &gt;= 3) { // Checks if inputted name is the correct length</span>
+<span class="fc" id="L42">            userName = nameofuser; // Sets userName</span>
+        }
+        else { // If length is incorrect
+<span class="fc" id="L45">            throw new IllegalArgumentException(&quot;This is not a valid name must be 3 or more characters&quot;); // Outputs an error</span>
+        }
+<span class="fc" id="L47">    }</span>
+    /* Getter for UserName */
+    public String getPassengerName() {
+<span class="fc" id="L50">        return userName;</span>
+    }
+
+    /* Setter for UserID */
+    private void setUserID(String idofuser) {
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        if(idofuser.length() &gt;= 10) { // Checks length of User id</span>
+<span class="fc" id="L56">            userID = idofuser; // Sets userID</span>
+        }
+        else { // If length of userid is incorrect
+<span class="fc" id="L59">            throw new IllegalArgumentException(&quot;ID must be at least 10 characters&quot;); // Outputs an error</span>
+        }
+<span class="fc" id="L61">    }</span>
+    /* Getter for UserID */
+    public String getPassengerUserID() {
+<span class="fc" id="L64">        return userID;</span>
+    }
+
+    /* Setter for UserPhoneNum */
+    private void setPhoneNumber(String phnum) {
+<span class="fc bfc" id="L69" title="All 2 branches covered.">        if(phnum.length() &gt;= 7) { // Checks length of Phone Number</span>
+<span class="fc" id="L70">            userPhoneNum = phnum; // Sets userPhoneNum</span>
+        }
+        else { // If length of phone number is incorrect
+<span class="fc" id="L73">            throw new IllegalArgumentException(&quot;Phone Number must be at least 7 characters&quot;); // Outputs an error</span>
+        }
+<span class="fc" id="L75">    }</span>
+    /* Getter for UserPhoneNum */
+    public String getPassengerPhoneNumber() {
+<span class="fc" id="L78">        return userPhoneNum;</span>
+    }
+
+    /* Setter for UserAge */
+    private void setAge(int ageofuser) {
+<span class="fc bfc" id="L83" title="All 2 branches covered.">        if(ageofuser &gt; 16) { // Checks if users age is above a certain value</span>
+<span class="fc" id="L84">            userAge = ageofuser; // Sets userAge</span>
+        }
+        else { // If age is below
+<span class="fc" id="L87">            throw new IllegalArgumentException(&quot;Passenger must be over 16 to fly.&quot;); // Outputs an error</span>
+        }
+<span class="fc" id="L89">    }</span>
+    /* Getter for UserAge */
+    public int getPassengerAge() {
+<span class="fc" id="L92">        return userAge;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
