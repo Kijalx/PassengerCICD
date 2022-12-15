@@ -3,7 +3,7 @@
  * G00396018
  * Java Personal Assignment // Test Driven File
  */
-package ie.atu;
+package ie.atu.App;
 
 public class Passenger {
     /* Creates local variables*/

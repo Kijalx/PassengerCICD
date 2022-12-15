@@ -2,4 +2,4 @@ FROM openjdk:17
 RUN mkdir /app
 COPY target/classes/ /app
 WORKDIR /app
-CMD java ie.atu.DummyData
+CMD java ie.atu.App.DummyData

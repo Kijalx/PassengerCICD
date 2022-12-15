@@ -1,4 +1,4 @@
-package ie.atu;
+package ie.atu.App;
 import java.util.Random;
 public class DummyData {
     Random rand = new Random();
