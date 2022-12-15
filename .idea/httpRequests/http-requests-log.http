@@ -1,0 +1,28 @@
+GET http://localhost:8081/api/passenger/29
+
+<> 2022-12-15T165519.404.json
+
+###
+
+GET http://localhost:8081/api/passenger/1452709948
+
+<> 2022-12-15T165425.404.json
+
+###
+
+GET http://localhost:8081/api/passenger/44
+
+<> 2022-12-15T165356.404.json
+
+###
+
+GET http://localhost:8081/api/passenger/{{PassengerID}}
+
+###
+
+GET http://localhost:8081/api/passenger
+
+<> 2022-12-15T165211.200.json
+
+###
+

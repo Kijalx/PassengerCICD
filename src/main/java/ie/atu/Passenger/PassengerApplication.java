@@ -1,14 +1,38 @@
 package ie.atu.Passenger;
 
-import ie.atu.App.DummyData;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
 
 @SpringBootApplication
+@RequestMapping(path = "api/passenger")
 public class PassengerApplication {
-
+	PassengerService myService;
+	@Autowired
+	public PassengerApplication(PassengerService myService) {
+		this.myService = myService;
+	}
 	public static void main(String[] args) {
 		SpringApplication.run(PassengerApplication.class, args);
+	}
+
+	@GetMapping
+	public List<Passenger> getPassengers(){
+		return myService.getPassengers();
+	}
+	@GetMapping("/{Passengerage}")
+	public Passenger getPassenger(@PathVariable String Passengerage){
+		DummyData data = new DummyData();
+		Passenger myPassenger = new Passenger(data.setDummyTitle(), data.setDummyName(), data.setDummyID(), data.setDummyPhoneNum(), data.setDummyAge());
+		return myPassenger;
 	}
 
 }
