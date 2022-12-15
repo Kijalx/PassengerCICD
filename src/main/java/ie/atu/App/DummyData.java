@@ -1,9 +1,17 @@
 package ie.atu.App;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
+@Service
 public class DummyData {
+    List<Passenger> list = new ArrayList<Passenger>();
     Random rand = new Random();
     String userName, userTitle, userPhoneNum, userID;
     int userAge;
+    private int num;
     int max = 1999999999;
     int min = 1000000000;
     String[] firstName = {"Richard","Mikaela","Caitlyn","Syed","Dani","Ismail","Felicity","Brayleigh","Karmen","Felix","Amberly","Alexavier","Mavis","Renata","Camron","Leyla","Saydee","Dashiell","Jamison","Demi","Drake","Cian","Maddison","Sawyer","Amina","Valerie","Ivey","Madilynn","Candace","Osman","John","Nolan","Valeria","Alexa","Anakin","Kaleb","Maite","Moira","Bradlee","Ryleigh"};
@@ -16,22 +24,27 @@ public class DummyData {
         dummy.setDummy();
     }
     public void setDummy(){
+
+        Scanner amount = new Scanner(System.in);
+        System.out.println("Enter how many objects you would like to randomly create");
+        num = amount.nextInt();
         //noinspection InfiniteLoopStatement
-        while (true) {
+        for(int i = 0; i < num; i++) {
                 userAge = rand.nextInt((50 - 17) + 1) + 17;
                 int id = rand.nextInt((max - min) + 1) + min;
                 userID = Integer.toString(id);
                 userName = firstName[rand.nextInt(firstName.length)] + " " + surname[rand.nextInt(surname.length)];
                 userTitle = title[rand.nextInt(title.length)];
                 userPhoneNum = phoneNum[rand.nextInt(phoneNum.length)];
-                System.out.println(" User Age: " + userAge + " User ID: " + userID + " User Name: " + userName + " User Title: " + userTitle + " User Phone Number: " + userPhoneNum);
-                new Passenger(userTitle,userName,userID,userPhoneNum,userAge);
+                Passenger pass = new Passenger(userTitle,userName,userID,userPhoneNum,userAge);
+                System.out.println(" User Age: " + pass.getPassengerAge() + " User ID: " + pass.getPassengerTitle() + " User Name: " + pass.getPassengerName() + " User Title: " + pass.getPassengerTitle() + " User Phone Number: " + pass.getPassengerPhoneNumber());
                 System.out.println("User Created");
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(500);
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 }
+                list.add(pass);
         }
     }
 }
