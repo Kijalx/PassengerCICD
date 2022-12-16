@@ -1,5 +1,4 @@
 FROM openjdk:17
-RUN mkdir /app
-COPY target/classes/ /app
+COPY target/*.jar /app
 WORKDIR /app
-CMD java ie.atu.Passenger.PassengerApplication
+CMD java -jar *.jar

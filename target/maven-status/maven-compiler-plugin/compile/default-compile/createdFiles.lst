@@ -1,3 +1,5 @@
-ie\atu\App\Passenger.class
+ie\atu\Passenger\PassengerService.class
 ie\atu\Passenger\PassengerApplication.class
-ie\atu\App\DummyData.class
+ie\atu\Passenger\Passenger.class
+ie\atu\Passenger\DummyData.class
+ie\atu\Passenger\PassengerRepo.class
