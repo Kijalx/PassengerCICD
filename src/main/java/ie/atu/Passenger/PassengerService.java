@@ -4,12 +4,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service
 public class PassengerService {
+    List<Passenger> list = new ArrayList<>();
     public List<Passenger> getPassengers(){
         DummyData data = new DummyData();
-        List<Passenger> list = List.of(
+        list = List.of(
                 new Passenger(data.setDummyTitle(), data.setDummyName(), data.setDummyID(), data.setDummyPhoneNum(), data.setDummyAge()),
                 new Passenger(data.setDummyTitle(), data.setDummyName(), data.setDummyID(), data.setDummyPhoneNum(), data.setDummyAge()),
                 new Passenger(data.setDummyTitle(), data.setDummyName(), data.setDummyID(), data.setDummyPhoneNum(), data.setDummyAge()),
@@ -21,7 +23,7 @@ public class PassengerService {
     }
     public Passenger getPassenger(@PathVariable String PassengerID){
         DummyData data = new DummyData();
-        Passenger myPassenger = new Passenger(data.setDummyTitle(), data.setDummyName(), data.setDummyID(), data.setDummyPhoneNum(), data.setDummyAge());
+        Passenger myPassenger = new Passenger(data.setDummyTitle(), data.setDummyName(), PassengerID, data.setDummyPhoneNum(), data.setDummyAge());
         return myPassenger;
     }
 }

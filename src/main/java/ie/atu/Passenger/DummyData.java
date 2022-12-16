@@ -1,14 +1,11 @@
 package ie.atu.Passenger;
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import java.util.Random;
-import java.util.Scanner;
 @Service
 public class DummyData {
-
+    Passenger newpass = new Passenger();
     Random rand = new Random();
     String userName, userTitle, userPhoneNum, userID;
     int userAge;
@@ -22,23 +19,29 @@ public class DummyData {
 
     public int setDummyAge(){
         userAge = rand.nextInt((50 - 17) + 1) + 17;
-        return userAge;
+        newpass.setAge(userAge);
+        return newpass.getPassengerAge();
     }
+
     public String setDummyID(){
         int id = rand.nextInt((max - min) + 1) + min;
         userID = Integer.toString(id);
-        return userID;
+        newpass.setID(userID);
+        return newpass.getPassengerUserID();
     }
     public String setDummyName(){
         userName = firstName[rand.nextInt(firstName.length)] + " " + surname[rand.nextInt(surname.length)];
-        return userName;
+        newpass.setName(userName);
+        return newpass.getPassengerName();
     }
     public String setDummyTitle(){
         userTitle = title[rand.nextInt(title.length)];
-        return userTitle;
+        newpass.setTitle(userTitle);
+        return newpass.getPassengerTitle();
     }
     public String setDummyPhoneNum(){
         userPhoneNum = phoneNum[rand.nextInt(phoneNum.length)];
-        return userPhoneNum;
+        newpass.setPhoneNumber(userPhoneNum);
+        return newpass.getPassengerPhoneNumber();
     }
 }

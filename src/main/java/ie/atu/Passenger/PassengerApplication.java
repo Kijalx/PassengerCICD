@@ -26,7 +26,8 @@ public class PassengerApplication {
 
 	@GetMapping
 	public List<Passenger> getPassengers(){
-		return myService.getPassengers();
+		PassengerService myService2 = new PassengerService();
+		return myService2.getPassengers();
 	}
 	@GetMapping("/{PassengerID}")
 	public Passenger getPassenger(@PathVariable String PassengerID){

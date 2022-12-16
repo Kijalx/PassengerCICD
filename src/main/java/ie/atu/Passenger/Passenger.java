@@ -6,14 +6,9 @@
 package ie.atu.Passenger;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
-@Getter
-@Setter
 @NoArgsConstructor
 public class Passenger {
     /* Creates local variables*/
@@ -24,7 +19,7 @@ public class Passenger {
     private int userAge;
 
     /* Setter for UserTitle */
-    private void setTitle(String title){
+    public void setTitle(String title){
         if(title.equalsIgnoreCase("Mr") || title.equalsIgnoreCase("Mrs") || title.equalsIgnoreCase("Ms")){ // Checks if imputted title is correct
             userTitle = title; // Sets UserTitle
         }
@@ -38,7 +33,7 @@ public class Passenger {
     }
 
     /* Setter for UserName */
-    private void setName(String nameofuser) {
+    public void setName(String nameofuser) {
         if(nameofuser.length() >= 3) { // Checks if inputted name is the correct length
             userName = nameofuser; // Sets userName
         }
@@ -52,7 +47,7 @@ public class Passenger {
     }
 
     /* Setter for UserID */
-    private void setUserID(String idofuser) {
+    public void setID(String idofuser) {
         if(idofuser.length() >= 10) { // Checks length of User id
             userID = idofuser; // Sets userID
         }
@@ -66,7 +61,7 @@ public class Passenger {
     }
 
     /* Setter for UserPhoneNum */
-    private void setPhoneNumber(String phnum) {
+    public void setPhoneNumber(String phnum) {
         if(phnum.length() >= 7) { // Checks length of Phone Number
             userPhoneNum = phnum; // Sets userPhoneNum
         }
@@ -80,7 +75,7 @@ public class Passenger {
     }
 
     /* Setter for UserAge */
-    private void setAge(int ageofuser) {
+    public void setAge(int ageofuser) {
         if(ageofuser > 16) { // Checks if users age is above a certain value
             userAge = ageofuser; // Sets userAge
         }
