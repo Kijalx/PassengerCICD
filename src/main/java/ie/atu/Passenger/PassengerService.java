@@ -19,7 +19,7 @@ public class PassengerService {
                 new Passenger(data.setDummyTitle(), data.setDummyName(), data.setDummyID(), data.setDummyPhoneNum(), data.setDummyAge()));
         return list;
     }
-    public Passenger getPassenger(@PathVariable String Passengerage){
+    public Passenger getPassenger(@PathVariable String PassengerID){
         DummyData data = new DummyData();
         Passenger myPassenger = new Passenger(data.setDummyTitle(), data.setDummyName(), data.setDummyID(), data.setDummyPhoneNum(), data.setDummyAge());
         return myPassenger;
