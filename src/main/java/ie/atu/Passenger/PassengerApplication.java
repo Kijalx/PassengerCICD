@@ -10,28 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
-
 @SpringBootApplication
-@RequestMapping(path = "api/passenger")
 public class PassengerApplication {
-	PassengerService myService;
-	@Autowired
-	public PassengerApplication(PassengerService myService) {
-		this.myService = myService;
-	}
 	public static void main(String[] args) {
 		SpringApplication.run(PassengerApplication.class, args);
 	}
-
-	@GetMapping
-	public List<Passenger> getPassengers(){
-		PassengerService myService2 = new PassengerService();
-		return myService2.getPassengers();
-	}
-	@GetMapping("/{PassengerID}")
-	public Passenger getPassenger(@PathVariable String PassengerID){
-		return myService.getPassenger(PassengerID);
-	}
-
 }
