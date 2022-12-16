@@ -28,11 +28,9 @@ public class PassengerApplication {
 	public List<Passenger> getPassengers(){
 		return myService.getPassengers();
 	}
-	@GetMapping("/{Passengerage}")
-	public Passenger getPassenger(@PathVariable String Passengerage){
-		DummyData data = new DummyData();
-		Passenger myPassenger = new Passenger(data.setDummyTitle(), data.setDummyName(), data.setDummyID(), data.setDummyPhoneNum(), data.setDummyAge());
-		return myPassenger;
+	@GetMapping("/{PassengerID}")
+	public Passenger getPassenger(@PathVariable String PassengerID){
+		return myService.getPassenger(PassengerID);
 	}
 
 }
