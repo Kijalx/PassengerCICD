@@ -8,7 +8,6 @@ package ie.atu.Passenger;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
 @NoArgsConstructor
 public class Passenger {
     /* Creates local variables*/
@@ -18,6 +17,13 @@ public class Passenger {
     private String userPhoneNum;
     private int userAge;
 
+    public Passenger(String title, String name, String id, String phoneNum, int age){
+        setTitle(title);
+        setName(name);
+        setID(id);
+        setPhoneNumber(phoneNum);
+        setAge(age);
+    }
     /* Setter for UserTitle */
     public void setTitle(String title){
         if(title.equalsIgnoreCase("Mr") || title.equalsIgnoreCase("Mrs") || title.equalsIgnoreCase("Ms")){ // Checks if imputted title is correct
