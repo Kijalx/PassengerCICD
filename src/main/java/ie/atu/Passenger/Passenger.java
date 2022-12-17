@@ -5,10 +5,12 @@
  */
 package ie.atu.Passenger;
 
-import lombok.AllArgsConstructor;
+import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
+@Entity
+@Table
 public class Passenger {
     /* Creates local variables*/
     private String userTitle;
@@ -16,7 +18,9 @@ public class Passenger {
     private String userID;
     private String userPhoneNum;
     private int userAge;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long count;
     public Passenger(String title, String name, String id, String phoneNum, int age){
         setTitle(title);
         setName(name);

@@ -1,24 +1,18 @@
 package ie.atu.Passenger;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.ArrayList;
 import java.util.List;
+@AllArgsConstructor
 @Service
 public class PassengerService {
+    private final PassengerRepo passengerRepo;
     List<Passenger> list = new ArrayList<>();
     public List<Passenger> getPassengers(){
-        DummyData data = new DummyData();
-        list = List.of(
-                new Passenger(data.setDummyTitle(), data.setDummyName(), data.setDummyID(), data.setDummyPhoneNum(), data.setDummyAge()),
-                new Passenger(data.setDummyTitle(), data.setDummyName(), data.setDummyID(), data.setDummyPhoneNum(), data.setDummyAge()),
-                new Passenger(data.setDummyTitle(), data.setDummyName(), data.setDummyID(), data.setDummyPhoneNum(), data.setDummyAge()),
-                new Passenger(data.setDummyTitle(), data.setDummyName(), data.setDummyID(), data.setDummyPhoneNum(), data.setDummyAge()),
-                new Passenger(data.setDummyTitle(), data.setDummyName(), data.setDummyID(), data.setDummyPhoneNum(), data.setDummyAge()),
-                new Passenger(data.setDummyTitle(), data.setDummyName(), data.setDummyID(), data.setDummyPhoneNum(), data.setDummyAge()),
-                new Passenger(data.setDummyTitle(), data.setDummyName(), data.setDummyID(), data.setDummyPhoneNum(), data.setDummyAge()));
-        return list;
+        return passengerRepo.findAll();
     }
     public Passenger getPassenger(@PathVariable String PassengerID){
         DummyData data = new DummyData();
