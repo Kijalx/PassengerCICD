@@ -38,5 +38,7 @@ jobs:
         with:
           java-version: '17'
           distribution: 'adopt'
-      - name: Package and deploy
+      - name: Package
         run: mvn --batch-mode --update-snapshots package
+      - name: Deploy
+        run: mvn --batch-mode --update-snapshots deploy
