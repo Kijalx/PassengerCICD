@@ -6,9 +6,14 @@
 package ie.atu.Passenger;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-
+import lombok.Setter;
+@Getter
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table
 public class Passenger {
@@ -21,6 +26,7 @@ public class Passenger {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long count;
+
     public Passenger(String title, String name, String id, String phoneNum, int age){
         setTitle(title);
         setName(name);
@@ -97,4 +103,5 @@ public class Passenger {
     public int getPassengerAge() {
         return userAge;
     }
+
 }
