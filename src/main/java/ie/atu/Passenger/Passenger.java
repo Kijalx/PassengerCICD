@@ -6,7 +6,7 @@
 
 //works
 package ie.atu.Passenger;
-//
+//working
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
